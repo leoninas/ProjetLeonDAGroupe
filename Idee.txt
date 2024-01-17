@@ -1,0 +1,1 @@
+Il y a des pandas qu'il faut protéger en construisant rapidement, toutes les 10 secondes il y a des débrsis qui tombent et qui cassent les constructions. Il y a de plus en plus de débris (de plusieurs types ?) et des matérieux qui se débloquent progressivements. Quand les pandas sont morts c'est perdu il faut recommancer.
