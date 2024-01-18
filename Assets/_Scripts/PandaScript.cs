@@ -12,7 +12,7 @@ public class PandaScript : MonoBehaviour
         if (PandaLife <= 0) //On vérifie s'il est mort
         {
             Destroy(gameObject); //On détruit le panda
-            //appel d'une fonction dans le game manager qui enlève un panda au compteur et qui vérifie si la partie est finie
+            GameManager.instance.CountPanda(); //On utilise le GameManger static pour appeler la fonction CountPanda
         }
     }
 }

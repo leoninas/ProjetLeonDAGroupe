@@ -42,8 +42,10 @@ public class ScrapScript : MonoBehaviour
     }
 
     //La fonction suivante permet de visualiser dans quel rayon va exploser notre débris en traçant un cercle de rayon ExplosionRadius
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawWireSphere(transform.position, ExplosionRadius);
-    //}
+    /*
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, ExplosionRadius);
+    }
+    */
 }

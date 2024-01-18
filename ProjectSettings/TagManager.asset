@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FirstGround
   - Panda
+  - Box
   layers:
   - Default
   - TransparentFX
