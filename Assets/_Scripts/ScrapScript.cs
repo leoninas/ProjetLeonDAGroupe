@@ -12,7 +12,7 @@ public class ScrapScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) //On détecte les collisions non triggers entrantes
     {
-        if (collision.transform.CompareTag("FirstGround") || collision.transform.CompareTag("Panda")) //On vérifie si le tag de l'objet rencontré est celui d'un objet faisant exploser le débris
+        if (collision.transform.CompareTag("Box") || collision.transform.CompareTag("FirstGround") || collision.transform.CompareTag("Panda")) //On vérifie si le tag de l'objet rencontré est celui d'un objet faisant exploser le débris
         {
             anim.SetBool("boom", true); //Dans l'animator, on met le booléen boom qui gère l'explosion à vrai pour dire que le débris explose
             StartCoroutine(WaitForDestroy()); //On appelle la fonction qui va attendre avant de détruire le débris
@@ -30,7 +30,14 @@ public class ScrapScript : MonoBehaviour
                         pandaScript.TakeDamage(Damage); //On appelle la fonction TakeDamage du PandaScript du panda touché et comme argument Damage le nombre de dégats à infliger au panda
                     }
                 }
-                //vérification pour les blocs cassables
+                if (hitGameObject.transform.CompareTag("Box")) //On vérifie que ce GameObject est une boite
+                {
+                    BoxCheck boxCheck = hitGameObject.GetComponent<BoxCheck>(); //On récupère le script BoxCheck du panda
+                    if (boxCheck != null) //On vérifie que ce scipt existe
+                    {
+                        boxCheck.TakeDamage(1); //On appelle la fonction TakeDamage du Boxheck de la boite touchée et comme argument 1 le nombre de dégats à infliger a la boite
+                    }
+                }
             }
         }
     }
